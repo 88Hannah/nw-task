@@ -1,0 +1,130 @@
+{
+    "wines": [
+
+        {
+            "id": "1",
+            "image": "https://d1sixo6y2intz2.cloudfront.net/images/merchandising/content/wines/edgard-carter-sureno-2018/background.jpg",
+            "name": "Edgard Carter Sureño 2018",
+            "type": "red",
+            "country": "Chile",
+            "abv": 13.8,
+            "price": 15.99,
+            "description_headline": "Awesome foursome blend sourced from all over Chile",
+            "description": [
+                "Four grape varieties from three different regions across Chile have gone into this absolute corker of a red; Cab Sauv from the Cachapoal Valley, Malbec from the Bio Bio Valley in the extreme south and Carmenere and Syrah from the Maule Valley.",
+                "The Cab Sauv forms the backbone of this wine with the Malbec bringing in a burst of fruity freshness and vibrancy. This is then rounded off beautifully by the silkiness of the Carmenere and dark fruits of the Syrah.",
+                "If you like Bordeaux blends, this wine has your name all over it! It looks posh, tastes posh, and will blow your friends away."
+            ]
+        },
+
+        {
+            "id": "2",
+            "image": "https://d1sixo6y2intz2.cloudfront.net/images/merchandising/content/wines/moerbei-sable-shiraz-2017/background.jpg",
+            "name": "Moerbei Sable Shiraz 2017",
+            "type": "red",
+            "country": "South Africa",
+            "abv": 14.0,
+            "price": 11.99,
+            "description_headline": "Smooth & rich, but still packs a punch.",
+            "description": [
+                "This Shiraz is the Daniel Craig of our reds. It's smooth & rich, but still packs a punch.",
+                "Funding helped the guys keep their best grapes. They used to have to sell them to their neighbours to finance the winemaking. Because of that we get to buy better wines at a lower price, and that saving is passed on to you!",
+                "Aged in expensive French Oak, this smoky, spicy, luscious red is the ideal companion for chargrilled red meat."
+            ]
+        },
+
+        {
+            "id": "3",
+            "image": "https://d1sixo6y2intz2.cloudfront.net/images/merchandising/content/wines/roblin-sancerre-origine-2019/background.jpg",
+            "name": "Roblin Sancerre Origine 2019",
+            "type": "white",
+            "country": "France",
+            "abv": 13.0,
+            "price": 19.99,
+            "description_headline": "Crisp, concentrated and textured Sancerre from the talented Roblin brothers",
+            "description": [
+                "Sancerre is the ultimate in Sauvignon Blanc. With Roblin Sancerre you get a big mouthful of wine that has the hallmark zest and minerality for which the Sancerre appellation is famous for.",
+                "We take great care of the soil around each vine to ensure that the grapes reach their peak of ripeness. The fruit is handled as little as possible so that it expresses all of the vivid aromatic characteristics of Sancerre.",
+                "Crisp, concentrated and textured, our Sancerre is the perfect match for fresh, delicious seafood, or gooey goats cheese. It also goes surprisingly well with flavoursome Asian dishes. "
+            ]
+        },
+
+        {
+            "id": "4",
+            "image": "https://d1sixo6y2intz2.cloudfront.net/images/merchandising/content/wines/arabella-viognier-2020/background.jpg",
+            "name": "Arabella Viognier 2020",
+            "type": "white",
+            "country": "South Africa",
+            "abv": 14.5,
+            "price": 8.99,
+            "description_headline": "Insanely fragrant Viognier from the Godfather",
+            "description": [
+                "Take a deep breath because this Viognier is so gorgeously fragrant it'll make your mouth water just smelling it.",
+                "Stephen has worked wonders with the Viognier grape, and you can taste his sheer passion in every sip. It's bursting with gorgeous apricot and honeysuckle, with a citrus zing-a-ling and a long, lingering finish."
+            ]
+        },
+
+        {
+            "id": "5",
+            "image": "https://d1sixo6y2intz2.cloudfront.net/images/merchandising/content/wines/villebois-pinot-noir-rose-2019/background.jpg",
+            "name": "Villebois Pinot Noir Rose 2019",
+            "type": "rose",
+            "country": "France",
+            "abv": 12.0,
+            "price": 9.99,
+            "description_headline": "Refined rose from your King and Queen of the Loire",
+            "description": [
+                "Pinot Noir grapes thrive on the hills near the Sancerre appellation so that’s exactly where Joost and Miguela went to find the fruit to go into their brand new rosé.",
+                "Light salmon-pink in colour, bursting with red berry fruits and rose petals, this is a beautifully balanced wine with a racy finish that’s sure to top your favourites list!",
+                "It’s a match made in heaven for afternoons around the picnic table with family and friends, sunbathing on the deck or, if you’re really lucky, lounging by the pool, so be sure to pop one in your basket now."
+            ]
+        },
+
+        {
+            "id": "6",
+            "image": "https://d1sixo6y2intz2.cloudfront.net/images/merchandising/content/wines/klein-cabernet-sauvignon-rose-2019/background.jpg",
+            "name": "Klein Cabernet Sauvignon Rose 2019",
+            "type": "rose",
+            "country": "Germany",
+            "abv": 12.0,
+            "price": 14.99,
+            "description_headline": "Mouth-wateringly complex rosé from Germany's Pfalz region",
+            "description": [
+                "I am a huge fan of rosé wine and I always search for this perfect balance between ripe fruit and freshness. I wanted to demonstrate that the combination of cool climate and an international variety can create a rosé with a new dimension.",
+                "I pressed the whole grapes of the Cabernet Sauvignon to get more flavours into the juice. The result is a really complex rosé that shows the typical cassis flavours of the Cabernet Sauvignon variety. A great tipple that will have you reaching for the next glass!"
+            ]
+        },
+
+        {
+            "id": "7",
+            "image": "https://d1sixo6y2intz2.cloudfront.net/images/merchandising/content/wines/jean-philippe-moulin-champagne-brut/background.jpg",
+            "name": "Jean Philippe Moulin Champagne Brut",
+            "type": "sparkling",
+            "country": "France",
+            "abv": 12.0,
+            "price": 29.99,
+            "description_headline": "Vibrant yet elegant Champagne from the genius behind world-famous labels",
+            "description": [
+                "The genius behind Ruinart, Mumm and Baron de Rothschild Champagne has made this spectacular Champagne.",
+                "Using the same skill and techniques behind those world-famous labels, he's produced this sophisticated and refined Champagne exclusively for you, that’d cost anyone else the best part of thirty quid.",
+                "It's vivacious, it's elegant and it punches well above its weight. So forget paying the big, famous name brand price. This is where the smart money is spent."
+            ]
+        },
+
+        {
+            "id": "8",
+            "image": "https://d1sixo6y2intz2.cloudfront.net/images/merchandising/content/wines/prosecco-spumante-borgo-di-sassi/background.jpg",
+            "name": "Prosecco Spumante Borgo di Sassi",
+            "type": "sparkling",
+            "country": "Italy",
+            "abv": 11.0,
+            "price": 10.99,
+            "description_headline": "This Prosecco is Alessandro's pride and joy",
+            "description": [
+                "Being a big producer, Alessandro has access to some amazing parcels of grapes. This Prosecco is his pride and joy.",
+                "Crisp apples, soft pear and a bright citrus zing make it a stonking match with seafood. And at pretty much less than half the price of a bottle of traditional Champagne it's top value."
+            ]
+        }
+
+    ]
+}
