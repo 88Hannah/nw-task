@@ -1,0 +1,12 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 5em;
+  color: #460F53;
+}
