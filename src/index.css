@@ -6,7 +6,58 @@
   box-sizing: border-box;
 }
 
+/* Variables */
+:root {
+  --clr-main-drk: #460F53;
+  --clr-secondary: #E8D5B5; 
+  --clr-main-light: #FEF7FF;
+  --clr-main-medium: #460F53;
+
+  --ff-logo: 'Dancing Script', cursive;
+  --ff-main: 'Roboto', sans-serif;
+}
+
+body {
+  font-family: var(--ff-main);
+}
+
+
 h1 {
-  font-size: 5em;
-  color: #460F53;
+  font-size: 3em;
+  color: var(--clr-secondary);
+  font-family: var(--ff-logo);
+}
+
+header {
+  background-color: var(--clr-main-drk);
+  display: flex;
+  align-items: center;
+  padding: 1em 2em;
+}
+
+.basket {
+  display: flex;
+  color: var(--clr-secondary);
+  margin-left: auto;
+  margin-right: 1.5em;
+}
+
+.basket__number {
+  padding-right: 0.5em;
+}
+
+
+
+.nav__links {
+  list-style-type: none;
+  display: flex
+}
+
+.nav__link {
+  text-decoration: none;
+  color: var(--clr-secondary);
+}
+
+.nav__item + .nav__item {
+  margin-left: 0.7em;
 }
