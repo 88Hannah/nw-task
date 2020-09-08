@@ -6,7 +6,220 @@
   box-sizing: border-box;
 }
 
-h1 {
-  font-size: 5em;
-  color: #460F53;
+/* Variables */
+:root {
+  --clr-main-drk: #460F53;
+  --clr-secondary: #E8D5B5; 
+  --clr-main-light: #FEF7FF;
+  --clr-main-medium: #A786AC;
+
+  --ff-logo: 'Dancing Script', cursive;
+  --ff-main: 'Roboto', sans-serif;
 }
+
+body {
+  font-family: var(--ff-main);
+}
+
+h1 {
+  font-size: 2em;
+  color: var(--clr-secondary);
+  font-family: var(--ff-logo);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+/***** Header *****/
+
+header {
+  background-color: var(--clr-main-drk);
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  position: relative;
+}
+
+.basket {
+  display: flex;
+  color: var(--clr-secondary);
+  font-size: 1.2em;
+  margin-left: auto;
+  margin-right: 1em;
+}
+
+.basket__number {
+  padding-right: 0.5em;
+}
+
+
+/* Nav styling for smaller screens */
+.nav {
+  position: absolute;
+  left: 100%;
+  width: 0;
+  top: 100%;
+  text-align: center;
+  background-color: var(--clr-main-medium);
+  transition: left 0.8s, width 0.8s;
+  overflow: hidden;
+  font-size: 1.2em;
+  box-shadow: 0 -2px 3px var(--clr-secondary);
+}
+
+.nav.open {  
+  left: 0;
+  width: 100%;
+}
+
+.nav__links {
+  list-style-type: none;
+  display: hidden;
+  padding: 30px;
+}
+
+.open .nav__links {
+  display: inherit;
+}
+
+.nav__link {
+  color: var(--clr-main-light);
+  padding: 0.3em;
+}
+
+.nav__item + .nav__item {
+  margin-top: 1em;
+}
+
+.nav__link:hover,
+.nav__link:focus,
+.basket:hover,
+.basket:focus {
+  outline: none;
+  color: var(--clr-main-light);
+  font-weight: 700;
+}
+
+
+/* Burger Menu for smaller screens*/
+.nav-toggle {
+  width: 30px;
+  height: 22px;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-toggle__line {
+  height: 2px;
+  width: 100%;
+  display: block;
+  position: absolute;
+  background-color: var(--clr-secondary);
+}
+
+.nav-toggle__line:nth-child(1) {
+  top: 0;
+}
+
+.nav-toggle__line:nth-child(2) {
+  top: 10px;
+  transition: 0.2s 0.6s ease-in-out; /* 1/4 of the animation time, starting after 3/4 of the time */
+}
+
+.nav-toggle__line:nth-child(3) {
+  top: 20px;
+}
+
+.open .nav-toggle__line:nth-child(1) {
+  top: 10px;
+  animation: top-spin-open 0.8s linear forwards;
+}
+
+.open .nav-toggle__line:nth-child(2) {
+  opacity: 0;
+  transition: 0.2s ease-in-out; /* 1/4 of the animation time */
+}
+
+.open .nav-toggle__line:nth-child(3) {
+  top: 10px;
+  animation: bottom-spin-open 0.8s linear forwards;
+}
+
+.close .nav-toggle__line:nth-child(1) {
+  top: 0px;
+  animation: top-spin-close 0.8s linear forwards;
+}
+
+.close .nav-toggle__line:nth-child(3) {
+  top: 0px;
+  animation: bottom-spin-close 0.8s linear forwards;
+}
+
+@keyframes top-spin-open {
+  0% {top: 0}
+  25% {top: 10px; transform: rotate(0)}
+  100% {top: 10px; transform: rotate(225deg)}
+}
+
+@keyframes bottom-spin-open {
+  0% {top: 20px}
+  25% {top: 10px; transform: rotate(0)}
+  100% {top: 10px; transform: rotate(-225deg)}
+}
+
+@keyframes top-spin-close {
+  0% {top: 10px; transform: rotate(45deg)}
+  75% {top: 10px; transform: rotate(-180deg)}
+  100% {top: 0; transform: rotate(-180deg)}
+}
+
+@keyframes bottom-spin-close {
+  0% {top: 10px; transform: rotate(-45deg)}
+  75% {top: 10px; transform: rotate(180deg)}
+  100% {top: 20px; transform: rotate(180deg)}
+}
+
+
+/* Header styling changes for larger screens */
+@media (min-width: 700px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav,
+  .open.nav {
+    position: initial;
+    width: fit-content;
+    background-color: inherit;
+    margin-left: auto;
+    margin-right: 1em;
+    box-shadow: none;
+  }
+
+  .nav__links,
+  .open .nav__links {
+    display: flex;
+    padding: 0;
+  }
+
+  .nav__link {
+    color: var(--clr-secondary);
+  }
+
+  .nav__item + .nav__item {
+    margin-top: 0;
+    margin-left: 0.7em;
+  }
+
+  .basket {
+    margin: 0;
+  }
+}
+/***** End of Header sylings *****/
+
+
+
