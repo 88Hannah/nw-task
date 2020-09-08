@@ -32,6 +32,12 @@ a {
   color: inherit;
 }
 
+img {
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
 
 
 /***** Header *****/
@@ -40,8 +46,9 @@ header {
   background-color: var(--clr-main-drk);
   display: flex;
   align-items: center;
-  padding: 1em;
+  padding: 0 1em;
   position: relative;
+  height: 70px;
 }
 
 .basket {
@@ -219,7 +226,27 @@ header {
     margin: 0;
   }
 }
-/***** End of Header sylings *****/
+/***** End of Header syling *****/
 
+/***** Hero Image *****/
+.hero-container {
+  width: 100%;
+  height: calc(100vh - 70px);
+  background-color: var(--clr-main-medium);
+  background-image: url('./images/hero-landscape.jpg');
+  background-position: center;
+  background-size: cover;
+}
 
+@media (max-width: 900px) {
+  .hero-container {
+    background-image: url('./images/hero-landscape-small.jpg');
+  }
+}
 
+@media (orientation:portrait) {
+  .hero-container {
+    background-image: url('./images/hero-portrait.jpg');
+  }
+}
+/***** End of Hero Image styling *****/
