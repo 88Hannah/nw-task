@@ -15,7 +15,9 @@ const wineCards = allWines.map(wine => (
     return (
         <div>
             <p>Lots of cards</p>
-            {wineCards}
+            <div className="wine-grid container">
+                {wineCards}
+            </div>
         </div>
     )
 }
