@@ -29,7 +29,7 @@ function Header() {
                 <span className="nav-toggle__line"></span>
             </div>
 
-            <nav className="nav">
+            <nav className={`nav ${toggleState}`}>
                 <ul className="nav__links">
                     <li className="nav__item"><a className="nav__link" href="#">Home</a></li>
                     <li className="nav__item"><a className="nav__link" href="#">About</a></li>
