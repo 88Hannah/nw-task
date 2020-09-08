@@ -16,7 +16,16 @@ function Header() {
     return (
         <header>
             
-            <h1>Sangar's Wines</h1>
+            <h1><a href="/">Sangar's Wines</a></h1>
+
+            <nav className={`nav ${toggleState}`}>
+                <ul className="nav__links">
+                    <li className="nav__item"><a className="nav__link" href="#">Home</a></li>
+                    <li className="nav__item"><a className="nav__link" href="#">About</a></li>
+                    <li className="nav__item"><a className="nav__link" href="#">Wines</a></li>
+                    <li className="nav__item"><a className="nav__link" href="#">Contact</a></li>
+                </ul>
+            </nav>
 
             <div className="basket">
                 <p className="basket__number">0</p>
@@ -29,14 +38,7 @@ function Header() {
                 <span className="nav-toggle__line"></span>
             </div>
 
-            <nav className={`nav ${toggleState}`}>
-                <ul className="nav__links">
-                    <li className="nav__item"><a className="nav__link" href="#">Home</a></li>
-                    <li className="nav__item"><a className="nav__link" href="#">About</a></li>
-                    <li className="nav__item"><a className="nav__link" href="#">Wines</a></li>
-                    <li className="nav__item"><a className="nav__link" href="#">Contact</a></li>
-                </ul>
-            </nav>
+            
 
 
         </header>
