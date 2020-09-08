@@ -61,3 +61,112 @@ header {
 .nav__item + .nav__item {
   margin-left: 0.7em;
 }
+
+
+/* .nav-toggle {
+  height: 3px;
+  width: 30px;
+  background-color: var(--clr-secondary);
+  position: relative;
+}
+
+.nav-toggle::before,
+.nav-toggle::after {
+  content: "";
+  height: 3px;
+  width: 30px;
+  background-color: var(--clr-secondary);
+  position: absolute;
+}
+
+.nav-toggle::before {
+  top: -10px;
+}
+
+.nav-toggle::after {
+  top: 10px;
+}
+
+.nav-toggle:hover {
+  cursor: pointer;
+} */
+
+
+.nav-toggle {
+  width: 30px;
+  height: 22px;
+  position: relative;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.nav-toggle__line {
+  height: 2px;
+  width: 100%;
+  display: block;
+  position: absolute;
+  background-color: var(--clr-secondary);
+}
+
+.nav-toggle__line:nth-child(1) {
+  top: 0;
+}
+
+.nav-toggle__line:nth-child(2) {
+  top: 10px;
+  transition: 0.2s 0.6s ease-in-out; /* one quarter of the annimation time */
+}
+
+.nav-toggle__line:nth-child(3) {
+  top: 20px;
+}
+
+.open .nav-toggle__line:nth-child(1) {
+  top: 10px;
+  animation: top-spin-open 0.8s linear forwards;
+}
+
+.open .nav-toggle__line:nth-child(2) {
+  opacity: 0;
+  transition: 0.2s ease-in-out; /* one quarter of the annimation time */
+}
+
+.open .nav-toggle__line:nth-child(3) {
+  top: 10px;
+  animation: bottom-spin-open 0.8s linear forwards;
+}
+
+.close .nav-toggle__line:nth-child(1) {
+  top: 0px;
+  animation: top-spin-close 0.8s linear forwards;
+}
+
+.close .nav-toggle__line:nth-child(3) {
+  top: 0px;
+  animation: bottom-spin-close 0.8s linear forwards;
+}
+
+
+@keyframes top-spin-open {
+  0% {top: 0}
+  25% {top: 10px; transform: rotate(0)}
+  100% {top: 10px; transform: rotate(225deg)}
+}
+
+@keyframes bottom-spin-open {
+  0% {top: 20px}
+  25% {top: 10px; transform: rotate(0)}
+  100% {top: 10px; transform: rotate(-225deg)}
+}
+
+@keyframes top-spin-close {
+  0% {top: 10px; transform: rotate(45deg)}
+  75% {top: 10px; transform: rotate(-180deg)}
+  100% {top: 0; transform: rotate(-180deg)}
+}
+
+@keyframes bottom-spin-close {
+  0% {top: 10px; transform: rotate(-45deg)}
+  75% {top: 10px; transform: rotate(180deg)}
+  100% {top: 20px; transform: rotate(180deg)}
+}
