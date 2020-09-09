@@ -353,3 +353,51 @@ header {
 button + button {
   margin-left: 2em;
 }
+
+
+/***** Modal *****/
+.modal {
+  width: 95%;
+  margin: 0 auto;
+  padding: 1em;
+  border: 1px solid hotpink;
+}
+
+.modal__wine-name {
+  color: var(--clr-main-drk);
+  margin-bottom: 0.5rem;
+}
+
+.modal__price {
+  font-size: 1.2em;
+  font-weight: 700;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.modal__description > p {
+  text-align: justify;
+  line-height: 1.4em;
+  margin-bottom: 1em;
+}
+
+.modal__wine-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 1em 0;
+}
+
+.modal__wine-glass {
+  font-size: 2em;
+}
+
+.modal__country,
+.modal__abv {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.modal__buttons {
+  text-align: center;
+}
