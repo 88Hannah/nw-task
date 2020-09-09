@@ -1,30 +1,14 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
+import {Context} from '../Context';
 
 function Card({wine}) {
 
     const [tooltipVisibility, setTooltipVisibility] = useState("hidden")
+    const {currentWine, toggleModal, currentType} = useContext(Context);
 
     const amount = wine.price.toLocaleString('en', {style: 'currency', currency: 'GBP'});
 
-    var wineColour = "";
-    var tooltipText = "";
-
-    if(wine.type === "red") {
-        wineColour = "#8d001f";
-        tooltipText = "Red wine";
-    } else if (wine.type === "white") {
-        wineColour = "#e4ce6c";
-        tooltipText = "White wine";
-    } else if (wine.type === "rose") {
-        wineColour = "#ffd1d8";
-        tooltipText = "Rosé wine";
-    } else if (wine.type === "sparkling") {
-        wineColour = "#b3955f";
-        tooltipText = "Sparkling wine";
-    } else {
-        wineColour = "grey";
-        tooltipText = "Wine";
-    }
+    const {wineColour, tooltipText} = currentType(wine.type);
 
     const handleMouseEnter = () => {
         setTooltipVisibility("visible");
@@ -32,6 +16,11 @@ function Card({wine}) {
 
     const handleMouseLeave = () => {
         setTooltipVisibility("hidden");
+    };
+
+    const handleClick = () => {
+        currentWine(wine.id);
+        toggleModal();
     };
 
 
@@ -59,7 +48,7 @@ function Card({wine}) {
                     </div>
                 </div>
                 <div className="card__buttons">
-                    <button>More Info</button>
+                    <button onClick={handleClick}>More Info</button>
                     <button>Add to basket</button>
                 </div>
             </div>

@@ -5,8 +5,6 @@ import Card from './Card';
 function CardGrid() {
 
 const {allWines} = useContext(Context);
-console.log(typeof(allWines))
-console.log(allWines)
 
 const wineCards = allWines.map(wine => (
     <Card key={wine.id} wine={wine} />

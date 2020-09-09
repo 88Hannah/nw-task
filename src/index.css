@@ -12,6 +12,7 @@
   --clr-secondary: #E8D5B5; 
   --clr-main-light: #FEF7FF;
   --clr-main-medium: #A786AC;
+  --rgb-main-medium: 167, 134, 172;
 
   --ff-logo: 'Dancing Script', cursive;
   --ff-main: 'Roboto', sans-serif;
@@ -42,8 +43,16 @@ button {
   padding: 0.5em 1.5em;
   background-color: var(--clr-main-drk);
   color: var(--clr-secondary);
+  font-weight: 700;
   border: none;
   border-radius: 100px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--clr-secondary);
+  color: var(--clr-main-drk);
+  box-shadow: 1px 1px 6px 0px var(--clr-main-medium);
 }
 
 .container {
@@ -352,4 +361,115 @@ header {
 
 button + button {
   margin-left: 2em;
+}
+
+
+/***** Modal *****/
+.modal-container {
+  /* display: none; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100vh;
+  overflow: scroll;
+  background-color: rgb(0, 0, 0);
+	background-color: rgba(var(--rgb-main-medium), 0.7);
+}
+
+
+.modal {
+  background-color: white;
+  width: 95%;
+  max-width: 550px;
+  margin: 50px auto;
+  padding: 1em;
+}
+
+.modal__wine-name {
+  color: var(--clr-main-drk);
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 0.5rem;
+}
+
+.modal__price {
+  font-size: 1.2em;
+  font-weight: 700;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.modal__description > p {
+  text-align: justify;
+  line-height: 1.4em;
+  margin-bottom: 1em;
+}
+
+.modal__wine-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 1em 0;
+}
+
+.modal__wine-glass-container {
+  position: relative;
+}
+
+.modal__wine-glass {
+  font-size: 2em;
+  margin-left: 0;
+}
+
+.modal__country,
+.modal__abv {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.modal__buttons {
+  text-align: center;
+}
+
+/* Modal for larger screens */
+@media (min-width: 700px) {
+  .modal {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(5, auto);
+    max-width: 750px;
+  }
+
+  .modal__img {
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+    max-width: 350px;
+  }
+
+  .modal__wine-name {
+    margin: 0 20px;
+    font-size: 2em;
+  }
+
+  .modal__buttons {
+    grid-column: 2 / -1;
+    grid-row: 3 / 4;
+  }
+
+  .modal__description {
+    grid-column: 1 / -1;
+    grid-row: 4 / 5;
+    margin: 1em 1em 0 1em;
+  }
+
+  .modal__wine-info {
+    grid-column: 1 / -1;
+    grid-row: 5 / 6;
+    width: 500px;
+    margin: 0 auto 1em;
+  }
+
+  
 }
