@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 function Card({wine}) {
+
+    const [tooltipVisibility, setTooltipVisibility] = useState("hidden")
 
     const amount = wine.price.toLocaleString('en', {style: 'currency', currency: 'GBP'});
 
@@ -18,6 +20,14 @@ function Card({wine}) {
         wineColour = "grey"
     }
 
+    const handleMouseEnter = () => {
+        setTooltipVisibility("visible");
+    };
+
+    const handleMouseLeave = () => {
+        setTooltipVisibility("hidden");
+    };
+
 
 
     return (
@@ -29,7 +39,15 @@ function Card({wine}) {
                 <h2 className="wine-name">{wine.name}</h2>
                 <div className="wine-details">
                     <p>{amount} a bottle</p>
-                    <i class="fas fa-wine-glass-alt wine-glass" style={{color:wineColour}}></i>
+                    <div className="wine-glass-container">
+                        <i 
+                            className="fas fa-wine-glass-alt wine-glass" 
+                            style={{color:wineColour}} 
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
+                        ></i>
+                        <span className="wine-glass-tooltip" style={{visibility:tooltipVisibility}}>{wine.type}</span>
+                    </div>
                 </div>
                 <div className="card__buttons">
                     <button>More Info</button>
