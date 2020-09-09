@@ -12,8 +12,8 @@ function Card({wine}) {
             <div className="card__text">
                 <h2 className="wine-name">{wine.name}</h2>
                 <p>{amount}</p>
-                <button>More</button>
-                <button>Buy</button>
+                <button>More Info</button>
+                <button>Buy Now</button>
             </div>
 
         </div>
