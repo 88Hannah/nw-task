@@ -48,12 +48,18 @@ function ContextProvider({children}) {
     };
 
 
-    const filterWines = (type, country) => {
-        console.log(type, country)
+    const filterWines = (type, country, min, max) => {
         setWinesToDisplay(() => {
-            const typeFiltered = type != "default" ? allWines.filter(wine => wine.type === type) : allWines;
-            const countryAndTypeFiltered = country != "default" ? typeFiltered.filter(wine => (wine.country).toLowerCase() === country) : typeFiltered;
-            return countryAndTypeFiltered;
+            const typeFiltered = type !== "default" ? allWines.filter(wine => wine.type === type) : allWines;
+            const countryAndTypeFiltered = country !== "default" ? typeFiltered.filter(wine => (wine.country).toLowerCase() === country) : typeFiltered;
+            const allFilters = countryAndTypeFiltered.filter(wine => {
+                if(max) {
+                   return wine.price >= min && wine.price < max;
+                } else {
+                    return wine.price >= min;
+                }
+            })
+            return allFilters;
         })
     }
 
