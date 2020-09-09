@@ -13,12 +13,11 @@ const wineCards = allWines.map(wine => (
 ));
 
     return (
-        <div>
-            <p>Lots of cards</p>
-            <div className="wine-grid container">
+        <section className="main-section container">
+            <div className="wine-grid">
                 {wineCards}
             </div>
-        </div>
+        </section>
     )
 }
 

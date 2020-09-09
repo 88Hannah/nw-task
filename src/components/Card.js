@@ -7,17 +7,23 @@ function Card({wine}) {
     const amount = wine.price.toLocaleString('en', {style: 'currency', currency: 'GBP'});
 
     var wineColour = "";
+    var tooltipText = "";
 
     if(wine.type === "red") {
-        wineColour = "#8d001f"
+        wineColour = "#8d001f";
+        tooltipText = "Red wine";
     } else if (wine.type === "white") {
-        wineColour = "#e4ce6c"
+        wineColour = "#e4ce6c";
+        tooltipText = "White wine";
     } else if (wine.type === "rose") {
-        wineColour = "#ffd1d8"
+        wineColour = "#ffd1d8";
+        tooltipText = "Rosé wine";
     } else if (wine.type === "sparkling") {
-        wineColour = "#b3955f"
+        wineColour = "#b3955f";
+        tooltipText = "Sparkling wine";
     } else {
-        wineColour = "grey"
+        wineColour = "grey";
+        tooltipText = "Wine";
     }
 
     const handleMouseEnter = () => {
@@ -35,8 +41,8 @@ function Card({wine}) {
             <div className="card__img">
                 <img src={wine.image} alt={wine.name}/>
             </div>
-            <div className="card__text">
-                <h2 className="wine-name">{wine.name}</h2>
+            <h2 className="wine-name card__details">{wine.name}</h2>
+            <div className="card__details--bottom card__details">
                 <div className="wine-details">
                     <p>{amount} a bottle</p>
                     <div className="wine-glass-container">
@@ -46,7 +52,10 @@ function Card({wine}) {
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                         ></i>
-                        <span className="wine-glass-tooltip" style={{visibility:tooltipVisibility}}>{wine.type}</span>
+                        <span 
+                            className="wine-glass-tooltip" 
+                            style={{visibility:tooltipVisibility}}
+                        >{tooltipText}</span>
                     </div>
                 </div>
                 <div className="card__buttons">
@@ -54,7 +63,6 @@ function Card({wine}) {
                     <button>Buy Now</button>
                 </div>
             </div>
-
         </div>
     )
 
