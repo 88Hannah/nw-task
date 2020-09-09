@@ -13,11 +13,16 @@ const wineCards = allWines.map(wine => (
 ));
 
     return (
+        <>
         <section className="main-section container">
             <div className="wine-grid">
                 {wineCards}
             </div>
 
+            
+        </section>
+
+        <div className="modal-container">
             <div className="modal">
                 <h2 className="modal__wine-name">Red Red wine</h2>
                 <div className="modal__img">
@@ -44,7 +49,8 @@ const wineCards = allWines.map(wine => (
                     <button>Add to basket</button>
                 </div>
             </div>
-        </section>
+        </div>
+        </>
     )
 }
 
