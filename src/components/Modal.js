@@ -3,16 +3,17 @@ import {Context} from '../Context';
 
 function Modal() {
 
-const {allWines, modalWine, toggleModal, isModalOpen} = useContext(Context);
+const {allWines, modalWine, toggleModal, isModalOpen, currentType} = useContext(Context);
 
 const modalWineInfo = allWines.find(wine => wine.id === modalWine);
 
-var amount, modalText
+var amount, modalText, wineColour, tooltipText
 if (modalWineInfo) {
     amount = modalWineInfo.price.toLocaleString('en', {style: 'currency', currency: 'GBP'});
-    modalText = modalWineInfo.description.map(paragraph => (
-        <p>{paragraph}</p>
+    modalText = modalWineInfo.description.map((paragraph, id) => (
+        <p key={id}>{paragraph}</p>
     ));
+    var {wineColour} = currentType(modalWineInfo.type);
 }
 
 console.log(isModalOpen)
@@ -36,7 +37,7 @@ const modalDisplay = isModalOpen ? "block" : "none";
                     <div className="modal__wine-glass-container">
                         <i 
                             className="fas fa-wine-glass-alt modal__wine-glass" 
-                            style={{color:"red"}} 
+                            style={{color:wineColour}} 
                         ></i>
                     </div>
                     <p className="modal__abv">{modalWineInfo.abv}%</p>
