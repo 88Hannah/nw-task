@@ -43,8 +43,16 @@ button {
   padding: 0.5em 1.5em;
   background-color: var(--clr-main-drk);
   color: var(--clr-secondary);
+  font-weight: 700;
   border: none;
   border-radius: 100px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--clr-secondary);
+  color: var(--clr-main-drk);
+  box-shadow: 1px 1px 6px 0px var(--clr-main-medium);
 }
 
 .container {
@@ -406,8 +414,13 @@ button + button {
   margin: 1em 0;
 }
 
+.modal__wine-glass-container {
+  position: relative;
+}
+
 .modal__wine-glass {
   font-size: 2em;
+  margin-left: 0;
 }
 
 .modal__country,
