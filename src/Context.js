@@ -53,7 +53,7 @@ function ContextProvider({children}) {
             toggleModal, 
             currentWine, 
             modalWine,
-            currentType
+            currentType,
         }}>
             {children}
         </Context.Provider>
