@@ -1,8 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
+import {Context} from '../Context';
 
 function Card({wine}) {
 
     const [tooltipVisibility, setTooltipVisibility] = useState("hidden")
+    const {currentWine, toggleModal} = useContext(Context);
 
     const amount = wine.price.toLocaleString('en', {style: 'currency', currency: 'GBP'});
 
@@ -34,6 +36,11 @@ function Card({wine}) {
         setTooltipVisibility("hidden");
     };
 
+    const handleClick = () => {
+        currentWine(wine.id);
+        toggleModal();
+    };
+
 
 
     return (
@@ -59,7 +66,7 @@ function Card({wine}) {
                     </div>
                 </div>
                 <div className="card__buttons">
-                    <button>More Info</button>
+                    <button onClick={handleClick}>More Info</button>
                     <button>Add to basket</button>
                 </div>
             </div>
