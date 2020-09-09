@@ -38,6 +38,14 @@ img {
   object-fit: cover;
 }
 
+button {
+  padding: 0.5em 1.5em;
+  background-color: var(--clr-main-drk);
+  color: var(--clr-secondary);
+  border: none;
+  border-radius: 100px;
+}
+
 .container {
   width: 90%;
   max-width: 1000px;
@@ -283,4 +291,30 @@ header {
 
 .card__text {
   padding: 1em;
+}
+
+.wine-name {
+  color: var(--clr-main-drk);
+}
+
+.wine-details {
+  display: flex;
+  align-items: center;
+  margin: 1em 0;
+}
+
+.wine-glass {
+  font-size: 2em;
+  margin-left: 1em;
+  color: #e4ce6c;
+}
+
+.card__buttons {
+  /* display: flex; */
+  /* justify-content: center; */
+  text-align: center;
+}
+
+button + button {
+  margin-left: 2em;
 }
