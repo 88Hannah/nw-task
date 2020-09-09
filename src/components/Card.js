@@ -60,7 +60,7 @@ function Card({wine}) {
                 </div>
                 <div className="card__buttons">
                     <button>More Info</button>
-                    <button>Buy Now</button>
+                    <button>Add to basket</button>
                 </div>
             </div>
         </div>
