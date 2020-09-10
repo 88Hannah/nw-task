@@ -569,15 +569,13 @@ footer {
 
 /* Quotes */
 .quotes-container{
-  height: 180px;
-  width: 90%;
-  max-width: 600px;
-  margin: 0 auto;
+  height: 260px;
+  width: 300px;
   background: rgba(var(--rgb-main-medium), 0.4);
   overflow: hidden;
   position: absolute;
-  top: 35%;
-  left: calc(50% - 300px);
+  top: 30vh;
+  left: calc(50% - 150px);
 }
 
 .quotes {
@@ -586,29 +584,31 @@ footer {
 
 .quote {
   width: 100%;
-  padding: 0 10%;
+  padding: 0 5%;
   position: absolute;
   left: -120%;
-  top: 20px;
+  top: 15px;
   opacity: 0;
-  font-size: 1.4em;
+  font-size: 2em;
   color: var(--clr-main-light);
+  font-family: 'Cormorant Upright', serif;
+  font-weight: 700;
 }
 
 .quote-1 {
-  animation: slide 20s linear infinite;
+  animation: slide 24s linear infinite;
 }
 
 .quote-2 {
-  animation: slide 20s 5s linear infinite;
+  animation: slide 24s 6s linear infinite;
 }
 
 .quote-3 {
-  animation: slide 20s 10s linear infinite;
+  animation: slide 24s 12s linear infinite;
 }
 
 .quote-4 {
-  animation: slide 20s 15s linear infinite;
+  animation: slide 24s 18s linear infinite;
 }
 
 @keyframes slide {
@@ -619,5 +619,22 @@ footer {
   25% {left: 0; opacity: 1;}
   30% {left: 60%;}
   35% {left: 120%; opacity: 0;}
+}
 
+@media (min-width: 700px) {
+  .quotes-container {
+    width: 550px;
+    height: 150px;
+    top: 40vh;
+    left: calc(50% - 275px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .quotes-container {
+    width: 900px;
+    height: 110px;
+    top: 45vh;
+    left: calc(50% - 450px);
+  }
 }
