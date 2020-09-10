@@ -4,13 +4,14 @@ import {Context} from '../Context';
 function Modal() {
 
 const {allWines, modalWine, toggleModal, isModalOpen, currentType, toggleBasket, basket} = useContext(Context);
-const [modalTooltipVisibility, setModalTooltipVisibility] = useState("hidden")
+const [modalTooltipVisibility, setModalTooltipVisibility] = useState("hidden");
     
 const modalWineInfo = allWines.find(wine => wine.id === modalWine);
 
-var amount, modalText, wineColour, tooltipText
+var amount, modalText, wineColour, tooltipText;
 if (modalWineInfo) {
     amount = modalWineInfo.price.toLocaleString('en', {style: 'currency', currency: 'GBP'});
+    // Use a mapping to add paragraph tags to each of the paragraphs in the description array
     modalText = modalWineInfo.description.map((paragraph, id) => (
         <p key={id}>{paragraph}</p>
     ));
@@ -40,13 +41,12 @@ if(modalWineInfo) {
     const inBasket = basket.some(basketWine => basketWine.id === modalWineInfo.id);
     if (inBasket) {
         buttonText = "Remove";
-        basketClass = "btn-secondary"
+        basketClass = "btn-secondary";
     } else if (!inBasket) {
         buttonText = "Add to basket";
         basketClass = "btn-primary";
     }
 }
-
 
 
     return (
@@ -86,7 +86,7 @@ if(modalWineInfo) {
         </div>
         : null
 
-    )
-}
+    );
+};
 
 export default Modal;

@@ -10,8 +10,8 @@ function Header() {
     const handleClick = () => {
         setToggleState(prevState => (
             prevState === "open" ? "close" : "open"
-        ))
-    }
+        ));
+    };
 
     var basketTotal = 0;
     basket.forEach(wine => {
@@ -45,13 +45,8 @@ function Header() {
                 <span className="nav-toggle__line"></span>
             </div>
 
-            
-
-
         </header>
-
     )
-
-}
+};
 
 export default Header;

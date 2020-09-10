@@ -19,7 +19,7 @@ function Footer() {
             </div>  
             <p className="copy">&copy; Sangar's Wines 2020</p>     
         </footer>
-    )
+    );
 };
 
 export default Footer;

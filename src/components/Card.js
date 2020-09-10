@@ -3,7 +3,7 @@ import {Context} from '../Context';
 
 function Card({wine}) {
 
-    const [tooltipVisibility, setTooltipVisibility] = useState("hidden")
+    const [tooltipVisibility, setTooltipVisibility] = useState("hidden");
     const {currentWine, toggleModal, currentType, toggleBasket, basket} = useContext(Context);
 
     const amount = wine.price.toLocaleString('en', {style: 'currency', currency: 'GBP'});
@@ -28,7 +28,7 @@ function Card({wine}) {
     const inBasket = basket.some(basketWine => basketWine.id === wine.id);
     if (inBasket) {
         buttonText = "Remove";
-        basketClass = "btn-secondary"
+        basketClass = "btn-secondary";
     } else if (!inBasket) {
         buttonText = "Add to basket";
         basketClass = "btn-primary";
@@ -62,8 +62,7 @@ function Card({wine}) {
                 </div>
             </div>
         </div>
-    )
-
-}
+    );
+};
 
 export default Card;

@@ -8,7 +8,6 @@ function Hero() {
             <Quotes />
         </div>
     )
-
-}
+};
 
 export default Hero;

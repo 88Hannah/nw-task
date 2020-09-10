@@ -11,6 +11,7 @@ function ContextProvider({children}) {
     const [modalWine, setModalWine] = useState("");
     const [basket, setBasket] = useState([]);
 
+    // Populate the allWines and WinesToDisplay state variables on first load
     useEffect(() => {
         setAllWines(wineData.wines);
         setWinesToDisplay(wineData.wines);
@@ -69,6 +70,7 @@ function ContextProvider({children}) {
         })
     };
 
+
     const toggleBasket = id => {
         
         const wineIndex = allWines.findIndex(wine => wine.id === id);
@@ -79,10 +81,7 @@ function ContextProvider({children}) {
         } else if (inBasket) {
             setBasket(prevBasket => prevBasket.filter(wine => wine.id !== id))
         }
-        
     };
-
-
 
 
     return (

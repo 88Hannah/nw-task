@@ -19,8 +19,9 @@ const wineCards = winesToDisplay.map(wine => (
                     {wineCards}
                 </div>
             }
+            
         </section>
-    )
-}
+    );
+};
 
 export default CardGrid;
