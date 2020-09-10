@@ -49,6 +49,10 @@ button {
   cursor: pointer;
 }
 
+section {
+  padding: 1rem 0;
+}
+
 button:hover {
   background-color: var(--clr-secondary);
   color: var(--clr-main-drk);
@@ -274,11 +278,35 @@ header {
 }
 /***** End of Hero Image styling *****/
 
+/***** Filters *****/
+.filter-section {
+  text-align: center;
+}
+
+.filter__heading {
+  color: var(--clr-main-drk);
+  margin: 1em 0;
+}
+
+.filter__dropdown + .filter__dropdown {
+  margin-left: 0.5em;
+}
+
+.filter__dropdown {
+  padding: 0.3em;
+  margin: 0.25em 0;
+  background: var(--clr-main-light);
+  border: 1px solid var(--clr-main-medium);
+  color: var(--clr-main-drk);
+}
+
+.filter__reset {
+  margin-top: 1em;
+}
+/***** End of Filters styling *****/
+
 
 /***** Wine Cards  *****/
-.main-section {
-  margin-top: 2em;
-}
 
 .wine-grid {
   display: grid;

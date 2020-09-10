@@ -59,28 +59,28 @@ useEffect(() => {
 }, [typeFilter, countryFilter, priceFilter])
 
     return (
-        <div className="container">
-            <h3>Filter options</h3>
-            <select value={typeFilter} onChange={event => handleChange(event, setTypeFilter)}>
-                <option value="default">Type</option>
-                {typeOptions}
-            </select>
+        <section className="filter-section container">
+            <h3 className="filter__heading">Filter options</h3>
+            
+            <div className="filter__filters">
+                <select className="filter__dropdown" value={typeFilter} onChange={event => handleChange(event, setTypeFilter)}>
+                    <option value="default">Type</option>
+                    {typeOptions}
+                </select>
 
-            <select value={countryFilter} onChange={event => handleChange(event, setCountryFilter)}>
-                <option value="default">Country</option>
-                {countryOptions}
-            </select>
+                <select className="filter__dropdown" value={countryFilter} onChange={event => handleChange(event, setCountryFilter)}>
+                    <option value="default">Country</option>
+                    {countryOptions}
+                </select>
 
-            <select value={priceFilter} onChange={event => handleChange(event, setPriceFilter)}>
-            <option value="default">Price</option>
-                {/* <option>Under £6</option>
-                <option>£6 to £10</option>
-                <option>£10 to £15</option>
-                <option>£15 and over</option> */}
-                {priceOptions}
-            </select>
-            <button onClick={handleClick}>Reset Filters</button>
-        </div>
+                <select className="filter__dropdown" value={priceFilter} onChange={event => handleChange(event, setPriceFilter)}>
+                <option value="default">Price</option>
+                    {priceOptions}
+                </select>
+            </div>
+
+            <button className="filter__reset" onClick={handleClick}>Reset Filters</button>
+        </section>
     )
 };
 

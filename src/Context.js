@@ -54,7 +54,7 @@ function ContextProvider({children}) {
             const countryAndTypeFiltered = country !== "default" ? typeFiltered.filter(wine => (wine.country).toLowerCase() === country) : typeFiltered;
             const allFilters = countryAndTypeFiltered.filter(wine => {
                 if(max) {
-                   return wine.price >= min && wine.price < max;
+                   return wine.price >= min && wine.price <= max;
                 } else {
                     return wine.price >= min;
                 }
