@@ -29,7 +29,7 @@ function Header() {
                 <ul className="nav__links">
                     <li className="nav__item"><a className="nav__link" href="#">Home</a></li>
                     <li className="nav__item"><a className="nav__link" href="#">About</a></li>
-                    <li className="nav__item"><a className="nav__link" href="#">Wines</a></li>
+                    <li className="nav__item"><a className="nav__link active" href="#">Wines</a></li>
                     <li className="nav__item"><a className="nav__link" href="#">Contact</a></li>
                 </ul>
             </nav>

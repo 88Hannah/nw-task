@@ -110,6 +110,10 @@ header {
   margin-right: 1em;
 }
 
+.basket:hover {
+  cursor: pointer;
+}
+
 .basket__number {
   padding-right: 0.5em;
 }
@@ -156,10 +160,10 @@ header {
 .nav__link:hover,
 .nav__link:focus,
 .basket:hover,
-.basket:focus {
+.basket:focus,
+.nav__link.active {
   outline: none;
   color: var(--clr-main-light);
-  font-weight: 700;
 }
 
 
