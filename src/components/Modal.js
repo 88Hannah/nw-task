@@ -33,9 +33,11 @@ const handleClick = event => {
     };
 };
 
-const inBasket = basket.some(basketWine => basketWine.id === modalWineInfo.id);
-// const buttonText = inBasket ? "Remove" : "Add to basket";
-const buttonText = "hello";
+var buttonText = "";
+if(modalWineInfo) {
+    const inBasket = basket.some(basketWine => basketWine.id === modalWineInfo.id);
+    buttonText = inBasket ? "Remove" : "Add to basket";
+}
 
     return (
         
