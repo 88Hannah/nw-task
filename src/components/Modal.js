@@ -58,7 +58,7 @@ if(modalWineInfo) {
                 <div className="modal__img">
                     <img src={modalWineInfo.image} alt={modalWineInfo.name} />
                 </div>
-                <p className="modal__price">{amount} a bottle</p>
+                <p className="modal__price">{amount} per bottle</p>
                 <div className="modal__description">
                     {modalText}
                 </div>
@@ -76,7 +76,7 @@ if(modalWineInfo) {
                             style={{visibility:modalTooltipVisibility}}
                         >{tooltipText}</span>
                     </div>
-                    <p className="modal__abv">{modalWineInfo.abv}%</p>
+                    <p className="modal__abv">{modalWineInfo.abv}% ABV</p>
                 </div>
                 <div className="modal__buttons">
                     <button onClick={toggleModal}>Close</button>

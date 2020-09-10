@@ -42,7 +42,7 @@ function Card({wine}) {
             <h2 className="wine-name card__details">{wine.name}</h2>
             <div className="card__details--bottom card__details">
                 <div className="wine-details">
-                    <p>{amount} a bottle</p>
+                    <p>{amount} per bottle</p>
                     <div className="wine-glass-container">
                         <i 
                             className="fas fa-wine-glass-alt wine-glass" 
