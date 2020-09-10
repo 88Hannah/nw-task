@@ -1,5 +1,6 @@
 import React, {useContext, useState, useEffect} from 'react';
 import {Context} from '../Context';
+import * as priceFiltersData from '../priceFilers.json';
 
 function Filters() {
 
@@ -9,7 +10,7 @@ const [typeFilter, setTypeFilter] = useState("default");
 const [countryFilter, setCountryFilter] = useState("default");
 const [priceFilter, setPriceFilter] = useState("default");
 
-const priceBoundaries = [0, 6, 10, 15];
+const priceBoundaries = priceFiltersData.priceFilters;
 
 var priceOptions = [<option key={0} value={0}>Under £{priceBoundaries[1]}</option>]
 for(var i=1; i < priceBoundaries.length - 1; i++) {
