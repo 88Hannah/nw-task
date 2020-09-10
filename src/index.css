@@ -12,6 +12,7 @@
   --clr-secondary: #E8D5B5; 
   --clr-main-light: #FEF7FF;
   --clr-main-medium: #A786AC;
+  --rgb-main-drk: 70, 15, 83;
   --rgb-main-medium: 167, 134, 172;
 
   --ff-logo: 'Dancing Script', cursive;
@@ -266,7 +267,7 @@ header {
   background-image: url('./images/hero-landscape.jpg');
   background-position: center;
   background-size: cover;
-  padding-top: 100px;
+  /* padding-top: 100px; */
 }
 
 @media (max-width: 900px) {
@@ -568,11 +569,15 @@ footer {
 
 /* Quotes */
 .quotes-container{
-  height: 200px;
+  height: 180px;
   width: 90%;
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto;
-  background: rgba(var(--rgb-main-medium), 0.5);
+  background: rgba(var(--rgb-main-medium), 0.4);
+  overflow: hidden;
+  position: absolute;
+  top: 35%;
+  left: calc(50% - 300px);
 }
 
 .quotes {
@@ -584,7 +589,10 @@ footer {
   padding: 0 10%;
   position: absolute;
   left: -120%;
+  top: 20px;
   opacity: 0;
+  font-size: 1.4em;
+  color: var(--clr-main-light);
 }
 
 .quote-1 {
