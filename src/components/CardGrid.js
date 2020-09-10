@@ -12,11 +12,16 @@ const wineCards = winesToDisplay.map(wine => (
 
     return (
         <section className="main-section container">
-            <div className="wine-grid">
-                {wineCards}
-            </div>
+            
+            {winesToDisplay.length === 0 ? 
+                <p className="sorry-message">Sorry, we do not have any wine that matches your search criteria.</p>:          
+                <div className="wine-grid">
+                    {wineCards}
+                </div>
+            }
+            
         </section>
-    )
-}
+    );
+};
 
 export default CardGrid;

@@ -11,7 +11,7 @@ function Quotes() {
                 <p className="quote quote-4"><em>"Every bottle has been produced to perfection and I savour every drop."</em></p>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Quotes;

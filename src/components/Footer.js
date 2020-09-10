@@ -13,13 +13,13 @@ function Footer() {
                 </ul>
 
                 <div className="social">
-                    <a className="social__link footer__link" href="#" aria-label="Our Facebook page"><i class="fab fa-facebook-square social-icon"></i></a>
-                    <a className="social__link footer__link" href="#" aria-label="Our Twitter page"><i class="fab fa-twitter-square social-icon"></i></a>
+                    <a className="social__link footer__link" href="#" aria-label="Our Facebook page"><i className="fab fa-facebook-square social-icon"></i></a>
+                    <a className="social__link footer__link" href="#" aria-label="Our Twitter page"><i className="fab fa-twitter-square social-icon"></i></a>
                 </div>
             </div>  
             <p className="copy">&copy; Sangar's Wines 2020</p>     
         </footer>
-    )
+    );
 };
 
 export default Footer;

@@ -11,6 +11,7 @@ function ContextProvider({children}) {
     const [modalWine, setModalWine] = useState("");
     const [basket, setBasket] = useState([]);
 
+    // Populate the allWines and WinesToDisplay state variables on first load
     useEffect(() => {
         setAllWines(wineData.wines);
         setWinesToDisplay(wineData.wines);
@@ -27,26 +28,31 @@ function ContextProvider({children}) {
     const currentType = type => {
         var wineColour = "";
         var tooltipText = "";
-    
-        if(type === "red") {
-            wineColour = "#8d001f";
-            tooltipText = "Red wine";
-        } else if (type === "white") {
-            wineColour = "#e4ce6c";
-            tooltipText = "White wine";
-        } else if (type === "rose") {
-            wineColour = "#ffd1d8";
-            tooltipText = "Rosé wine";
-        } else if (type === "sparkling") {
-            wineColour = "#b3955f";
-            tooltipText = "Sparkling wine";
-        } else {
-            wineColour = "grey";
-            tooltipText = "Wine";
-        }
 
-        return {wineColour, tooltipText}
-    };
+        switch(type) {
+            case "red":
+                wineColour = "#8d001f";
+                tooltipText = "Red wine";
+                break;
+            case "white":
+                wineColour = "#e4ce6c";
+                tooltipText = "White wine";
+                break;
+            case "rose":
+                wineColour = "#ffd1d8";
+                tooltipText = "Rosé wine";
+                break;
+            case "sparkling":
+                wineColour = "#b3955f";
+                tooltipText = "Sparkling wine";
+                break;
+            default:
+                wineColour = "grey";
+                tooltipText = "Wine";
+            }
+
+            return {wineColour, tooltipText}
+        }
 
 
     const filterWines = (type, country, min, max) => {
@@ -64,6 +70,7 @@ function ContextProvider({children}) {
         })
     };
 
+
     const toggleBasket = id => {
         
         const wineIndex = allWines.findIndex(wine => wine.id === id);
@@ -74,10 +81,7 @@ function ContextProvider({children}) {
         } else if (inBasket) {
             setBasket(prevBasket => prevBasket.filter(wine => wine.id !== id))
         }
-        
     };
-
-
 
 
     return (

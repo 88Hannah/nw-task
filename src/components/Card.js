@@ -3,7 +3,7 @@ import {Context} from '../Context';
 
 function Card({wine}) {
 
-    const [tooltipVisibility, setTooltipVisibility] = useState("hidden")
+    const [tooltipVisibility, setTooltipVisibility] = useState("hidden");
     const {currentWine, toggleModal, currentType, toggleBasket, basket} = useContext(Context);
 
     const amount = wine.price.toLocaleString('en', {style: 'currency', currency: 'GBP'});
@@ -28,10 +28,10 @@ function Card({wine}) {
     const inBasket = basket.some(basketWine => basketWine.id === wine.id);
     if (inBasket) {
         buttonText = "Remove";
-        basketClass = "in-basket"
+        basketClass = "btn-secondary";
     } else if (!inBasket) {
         buttonText = "Add to basket";
-        basketClass = "not-in-basket";
+        basketClass = "btn-primary";
     }
     
     return (
@@ -42,7 +42,7 @@ function Card({wine}) {
             <h2 className="wine-name card__details">{wine.name}</h2>
             <div className="card__details--bottom card__details">
                 <div className="wine-details">
-                    <p>{amount} a bottle</p>
+                    <p>{amount} per bottle</p>
                     <div className="wine-glass-container">
                         <i 
                             className="fas fa-wine-glass-alt wine-glass" 
@@ -57,13 +57,12 @@ function Card({wine}) {
                     </div>
                 </div>
                 <div className="card__buttons">
-                    <button onClick={handleClick}>More Info</button>
+                    <button className="btn-secondary" onClick={handleClick}>More Info</button>
                     <button className={basketClass} onClick={() => toggleBasket(wine.id)}>{buttonText}</button>
                 </div>
             </div>
         </div>
-    )
-
-}
+    );
+};
 
 export default Card;

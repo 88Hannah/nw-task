@@ -4,13 +4,14 @@ import {Context} from '../Context';
 function Modal() {
 
 const {allWines, modalWine, toggleModal, isModalOpen, currentType, toggleBasket, basket} = useContext(Context);
-const [modalTooltipVisibility, setModalTooltipVisibility] = useState("hidden")
+const [modalTooltipVisibility, setModalTooltipVisibility] = useState("hidden");
     
 const modalWineInfo = allWines.find(wine => wine.id === modalWine);
 
-var amount, modalText, wineColour, tooltipText
+var amount, modalText, wineColour, tooltipText;
 if (modalWineInfo) {
     amount = modalWineInfo.price.toLocaleString('en', {style: 'currency', currency: 'GBP'});
+    // Use a mapping to add paragraph tags to each of the paragraphs in the description array
     modalText = modalWineInfo.description.map((paragraph, id) => (
         <p key={id}>{paragraph}</p>
     ));
@@ -40,13 +41,12 @@ if(modalWineInfo) {
     const inBasket = basket.some(basketWine => basketWine.id === modalWineInfo.id);
     if (inBasket) {
         buttonText = "Remove";
-        basketClass = "in-basket"
+        basketClass = "btn-secondary";
     } else if (!inBasket) {
         buttonText = "Add to basket";
-        basketClass = "not-in-basket";
+        basketClass = "btn-primary";
     }
 }
-
 
 
     return (
@@ -58,7 +58,7 @@ if(modalWineInfo) {
                 <div className="modal__img">
                     <img src={modalWineInfo.image} alt={modalWineInfo.name} />
                 </div>
-                <p className="modal__price">{amount} a bottle</p>
+                <p className="modal__price">{amount} per bottle</p>
                 <div className="modal__description">
                     {modalText}
                 </div>
@@ -76,17 +76,17 @@ if(modalWineInfo) {
                             style={{visibility:modalTooltipVisibility}}
                         >{tooltipText}</span>
                     </div>
-                    <p className="modal__abv">{modalWineInfo.abv}%</p>
+                    <p className="modal__abv">{modalWineInfo.abv}% ABV</p>
                 </div>
                 <div className="modal__buttons">
-                    <button onClick={toggleModal}>Close</button>
+                    <button className="btn-secondary" onClick={toggleModal}>Close</button>
                     <button className={basketClass} onClick={() => toggleBasket(modalWineInfo.id)}>{buttonText}</button>
                 </div>
             </div>
         </div>
         : null
 
-    )
-}
+    );
+};
 
 export default Modal;

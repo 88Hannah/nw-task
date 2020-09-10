@@ -10,8 +10,8 @@ function Header() {
     const handleClick = () => {
         setToggleState(prevState => (
             prevState === "open" ? "close" : "open"
-        ))
-    }
+        ));
+    };
 
     var basketTotal = 0;
     basket.forEach(wine => {
@@ -29,7 +29,7 @@ function Header() {
                 <ul className="nav__links">
                     <li className="nav__item"><a className="nav__link" href="#">Home</a></li>
                     <li className="nav__item"><a className="nav__link" href="#">About</a></li>
-                    <li className="nav__item"><a className="nav__link" href="#">Wines</a></li>
+                    <li className="nav__item"><a className="nav__link active" href="#">Wines</a></li>
                     <li className="nav__item"><a className="nav__link" href="#">Contact</a></li>
                 </ul>
             </nav>
@@ -45,13 +45,8 @@ function Header() {
                 <span className="nav-toggle__line"></span>
             </div>
 
-            
-
-
         </header>
-
     )
-
-}
+};
 
 export default Header;
