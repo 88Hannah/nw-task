@@ -28,10 +28,10 @@ function Card({wine}) {
     const inBasket = basket.some(basketWine => basketWine.id === wine.id);
     if (inBasket) {
         buttonText = "Remove";
-        basketClass = "in-basket"
+        basketClass = "btn-secondary"
     } else if (!inBasket) {
         buttonText = "Add to basket";
-        basketClass = "not-in-basket";
+        basketClass = "btn-primary";
     }
     
     return (
@@ -57,7 +57,7 @@ function Card({wine}) {
                     </div>
                 </div>
                 <div className="card__buttons">
-                    <button onClick={handleClick}>More Info</button>
+                    <button className="btn-secondary" onClick={handleClick}>More Info</button>
                     <button className={basketClass} onClick={() => toggleBasket(wine.id)}>{buttonText}</button>
                 </div>
             </div>

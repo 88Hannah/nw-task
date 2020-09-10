@@ -46,22 +46,41 @@ img {
 
 button {
   padding: 0.5em 1.5em;
-  background-color: var(--clr-main-drk);
-  color: var(--clr-secondary);
   font-weight: 700;
   border: none;
   border-radius: 100px;
   cursor: pointer;
+  transition: transform 0.3s ease-in;
+}
+
+.btn-primary {
+  background-color: var(--clr-main-drk);
+  color: var(--clr-secondary);
+}
+
+.btn-secondary {
+  background-color: rgba(var(--rgb-main-medium), 0.5);
+  color: var(--clr-main-drk);
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary:hover {
+  background-color: var(--clr-secondary);
+  color: var(--clr-main-drk);
+  box-shadow: 1px 1px 6px 0px var(--clr-main-medium);
+}
+
+.btn-secondary:hover {
+  background-color: var(--clr-main-light);
+  color: var(--clr-main-drk);
+  box-shadow: 1px 1px 6px 0px var(--clr-main-medium);
 }
 
 section {
   padding: 1rem 0;
-}
-
-button:hover {
-  background-color: var(--clr-secondary);
-  color: var(--clr-main-drk);
-  box-shadow: 1px 1px 6px 0px var(--clr-main-medium);
 }
 
 .container {
@@ -510,14 +529,6 @@ button + button {
   }
 }
 /***** End of Modal Styling *****/
-
-
-/* Basket Buttons */
-.in-basket {
-  background-color: var(--clr-secondary);
-  color: var(--clr-main-drk);
-}
-
 
 
 

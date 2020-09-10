@@ -40,10 +40,10 @@ if(modalWineInfo) {
     const inBasket = basket.some(basketWine => basketWine.id === modalWineInfo.id);
     if (inBasket) {
         buttonText = "Remove";
-        basketClass = "in-basket"
+        basketClass = "btn-secondary"
     } else if (!inBasket) {
         buttonText = "Add to basket";
-        basketClass = "not-in-basket";
+        basketClass = "btn-primary";
     }
 }
 
@@ -79,7 +79,7 @@ if(modalWineInfo) {
                     <p className="modal__abv">{modalWineInfo.abv}% ABV</p>
                 </div>
                 <div className="modal__buttons">
-                    <button onClick={toggleModal}>Close</button>
+                    <button className="btn-secondary" onClick={toggleModal}>Close</button>
                     <button className={basketClass} onClick={() => toggleBasket(modalWineInfo.id)}>{buttonText}</button>
                 </div>
             </div>
