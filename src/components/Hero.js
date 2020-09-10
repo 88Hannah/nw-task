@@ -1,9 +1,12 @@
 import React from 'react';
+import Quotes from './Quotes';
 
 function Hero() {
 
     return (
-        <div className="hero-container"></div>
+        <div className="hero-container">
+            <Quotes />
+        </div>
     )
 
 }
