@@ -3,7 +3,7 @@ import {Context} from '../Context';
 
 function Modal() {
 
-const {allWines, modalWine, toggleModal, isModalOpen, currentType} = useContext(Context);
+const {allWines, modalWine, toggleModal, isModalOpen, currentType, toggleBasket, basket} = useContext(Context);
 const [modalTooltipVisibility, setModalTooltipVisibility] = useState("hidden")
     
 const modalWineInfo = allWines.find(wine => wine.id === modalWine);
@@ -32,6 +32,22 @@ const handleClick = event => {
         toggleModal();
     };
 };
+
+
+var buttonText = "";
+var basketClass = "";
+if(modalWineInfo) {
+    const inBasket = basket.some(basketWine => basketWine.id === modalWineInfo.id);
+    if (inBasket) {
+        buttonText = "Remove";
+        basketClass = "in-basket"
+    } else if (!inBasket) {
+        buttonText = "Add to basket";
+        basketClass = "not-in-basket";
+    }
+}
+
+
 
     return (
         
@@ -64,7 +80,7 @@ const handleClick = event => {
                 </div>
                 <div className="modal__buttons">
                     <button onClick={toggleModal}>Close</button>
-                    <button>Add to basket</button>
+                    <button className={basketClass} onClick={() => toggleBasket(modalWineInfo.id)}>{buttonText}</button>
                 </div>
             </div>
         </div>

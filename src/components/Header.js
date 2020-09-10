@@ -1,17 +1,24 @@
-import React, {useState} from 'react';
-
+import React, {useState, useContext} from 'react';
+import {Context} from '../Context';
 
 function Header() {
 
     const [toggleState, setToggleState] = useState("");
     
-    
+    const {basket} = useContext(Context);
+
     const handleClick = () => {
         setToggleState(prevState => (
             prevState === "open" ? "close" : "open"
         ))
     }
 
+    var basketTotal = 0;
+    basket.forEach(wine => {
+        basketTotal += wine.price;
+    });
+
+    const basketPrice = basketTotal.toLocaleString('en', {style: 'currency', currency: 'GBP'});
 
     return (
         <header>
@@ -28,7 +35,7 @@ function Header() {
             </nav>
 
             <div className="basket">
-                <p className="basket__number">0</p>
+                {basketTotal !== 0 ? <p className="basket__number">{basketPrice}</p> : null}
                 <i className="fas fa-shopping-basket basket__img"></i>
             </div>
 

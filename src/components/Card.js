@@ -4,7 +4,7 @@ import {Context} from '../Context';
 function Card({wine}) {
 
     const [tooltipVisibility, setTooltipVisibility] = useState("hidden")
-    const {currentWine, toggleModal, currentType} = useContext(Context);
+    const {currentWine, toggleModal, currentType, toggleBasket, basket} = useContext(Context);
 
     const amount = wine.price.toLocaleString('en', {style: 'currency', currency: 'GBP'});
 
@@ -23,8 +23,17 @@ function Card({wine}) {
         toggleModal();
     };
 
-
-
+    var buttonText = "";
+    var basketClass = "";
+    const inBasket = basket.some(basketWine => basketWine.id === wine.id);
+    if (inBasket) {
+        buttonText = "Remove";
+        basketClass = "in-basket"
+    } else if (!inBasket) {
+        buttonText = "Add to basket";
+        basketClass = "not-in-basket";
+    }
+    
     return (
         <div className="card">
             <div className="card__img">
@@ -49,7 +58,7 @@ function Card({wine}) {
                 </div>
                 <div className="card__buttons">
                     <button onClick={handleClick}>More Info</button>
-                    <button>Add to basket</button>
+                    <button className={basketClass} onClick={() => toggleBasket(wine.id)}>{buttonText}</button>
                 </div>
             </div>
         </div>

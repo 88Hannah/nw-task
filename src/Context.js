@@ -9,6 +9,7 @@ function ContextProvider({children}) {
     const [winesToDisplay, setWinesToDisplay] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalWine, setModalWine] = useState("");
+    const [basket, setBasket] = useState([]);
 
     useEffect(() => {
         setAllWines(wineData.wines);
@@ -61,7 +62,20 @@ function ContextProvider({children}) {
             })
             return allFilters;
         })
-    }
+    };
+
+    const toggleBasket = id => {
+        
+        const wineIndex = allWines.findIndex(wine => wine.id === id);
+        const inBasket = basket.some(wine => wine.id === id);
+
+        if(!inBasket) {
+            setBasket(prevBasket => [...prevBasket, allWines[wineIndex]]);
+        } else if (inBasket) {
+            setBasket(prevBasket => prevBasket.filter(wine => wine.id !== id))
+        }
+        
+    };
 
 
 
@@ -75,7 +89,9 @@ function ContextProvider({children}) {
             modalWine,
             currentType,
             filterWines,
-            winesToDisplay
+            winesToDisplay,
+            basket,
+            toggleBasket
         }}>
             {children}
         </Context.Provider>
