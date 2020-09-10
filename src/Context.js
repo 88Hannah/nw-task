@@ -74,8 +74,7 @@ function ContextProvider({children}) {
         } else if (inBasket) {
             setBasket(prevBasket => prevBasket.filter(wine => wine.id !== id))
         }
-
-        console.log(basket)
+        
     };
 
 

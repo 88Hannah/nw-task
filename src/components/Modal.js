@@ -33,11 +33,21 @@ const handleClick = event => {
     };
 };
 
+
 var buttonText = "";
+var basketClass = "";
 if(modalWineInfo) {
     const inBasket = basket.some(basketWine => basketWine.id === modalWineInfo.id);
-    buttonText = inBasket ? "Remove" : "Add to basket";
+    if (inBasket) {
+        buttonText = "Remove";
+        basketClass = "in-basket"
+    } else if (!inBasket) {
+        buttonText = "Add to basket";
+        basketClass = "not-in-basket";
+    }
 }
+
+
 
     return (
         
@@ -70,7 +80,7 @@ if(modalWineInfo) {
                 </div>
                 <div className="modal__buttons">
                     <button onClick={toggleModal}>Close</button>
-                    <button onClick={() => toggleBasket(modalWineInfo.id)}>{buttonText}</button>
+                    <button className={basketClass} onClick={() => toggleBasket(modalWineInfo.id)}>{buttonText}</button>
                 </div>
             </div>
         </div>

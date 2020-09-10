@@ -23,10 +23,17 @@ function Card({wine}) {
         toggleModal();
     };
 
-    
+    var buttonText = "";
+    var basketClass = "";
     const inBasket = basket.some(basketWine => basketWine.id === wine.id);
-    const buttonText = inBasket ? "Remove" : "Add to basket";
-
+    if (inBasket) {
+        buttonText = "Remove";
+        basketClass = "in-basket"
+    } else if (!inBasket) {
+        buttonText = "Add to basket";
+        basketClass = "not-in-basket";
+    }
+    
     return (
         <div className="card">
             <div className="card__img">
@@ -51,7 +58,7 @@ function Card({wine}) {
                 </div>
                 <div className="card__buttons">
                     <button onClick={handleClick}>More Info</button>
-                    <button onClick={() => toggleBasket(wine.id)}>{buttonText}</button>
+                    <button className={basketClass} onClick={() => toggleBasket(wine.id)}>{buttonText}</button>
                 </div>
             </div>
         </div>
