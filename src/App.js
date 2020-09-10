@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Filters from './components/Filters';
 import CardGrid from './components/CardGrid';
 import Modal from './components/Modal';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Filters />
       <CardGrid />
       <Modal />
+      <Footer />
     </>
   );
 }
