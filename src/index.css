@@ -127,6 +127,7 @@ header {
   overflow: hidden;
   font-size: 1.2em;
   box-shadow: 0 -2px 3px var(--clr-secondary);
+  z-index: 100;
 }
 
 .nav.open {  
