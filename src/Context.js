@@ -6,11 +6,13 @@ const Context = React.createContext();
 function ContextProvider({children}) {
 
     const [allWines, setAllWines] = useState([]);
+    const [winesToDisplay, setWinesToDisplay] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalWine, setModalWine] = useState("");
 
     useEffect(() => {
         setAllWines(wineData.wines);
+        setWinesToDisplay(wineData.wines);
     }, []);
 
     const toggleModal = () => {
@@ -46,6 +48,24 @@ function ContextProvider({children}) {
     };
 
 
+    const filterWines = (type, country, min, max) => {
+        setWinesToDisplay(() => {
+            const typeFiltered = type !== "default" ? allWines.filter(wine => wine.type === type) : allWines;
+            const countryAndTypeFiltered = country !== "default" ? typeFiltered.filter(wine => (wine.country).toLowerCase() === country) : typeFiltered;
+            const allFilters = countryAndTypeFiltered.filter(wine => {
+                if(max) {
+                   return wine.price >= min && wine.price <= max;
+                } else {
+                    return wine.price >= min;
+                }
+            })
+            return allFilters;
+        })
+    }
+
+
+
+
     return (
         <Context.Provider value={{
             allWines, 
@@ -53,7 +73,9 @@ function ContextProvider({children}) {
             toggleModal, 
             currentWine, 
             modalWine,
-            currentType
+            currentType,
+            filterWines,
+            winesToDisplay
         }}>
             {children}
         </Context.Provider>

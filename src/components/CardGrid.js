@@ -4,9 +4,9 @@ import Card from './Card';
 
 function CardGrid() {
 
-const {allWines} = useContext(Context);
+const {winesToDisplay} = useContext(Context);
 
-const wineCards = allWines.map(wine => (
+const wineCards = winesToDisplay.map(wine => (
     <Card key={wine.id} wine={wine} />
 ));
 
